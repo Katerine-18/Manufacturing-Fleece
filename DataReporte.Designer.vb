@@ -68,10 +68,10 @@ Partial Class DataReporte
         Me.dgvReporteGeneral.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvReporteGeneral.BackgroundColor = System.Drawing.Color.White
         Me.dgvReporteGeneral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvReporteGeneral.Location = New System.Drawing.Point(121, 134)
+        Me.dgvReporteGeneral.Location = New System.Drawing.Point(31, 134)
         Me.dgvReporteGeneral.Name = "dgvReporteGeneral"
         Me.dgvReporteGeneral.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.dgvReporteGeneral.Size = New System.Drawing.Size(790, 434)
+        Me.dgvReporteGeneral.Size = New System.Drawing.Size(994, 434)
         Me.dgvReporteGeneral.TabIndex = 4
         '
         'btnpackinglist

@@ -52,10 +52,6 @@ Public Class AgregarLote
                 Dim cmd As New SqlCommand("sp_InsertarLote", con)
                 cmd.CommandType = CommandType.StoredProcedure
 
-                ' --- CONVERSIÓN DE DATOS ---
-                ' Num, Lote, PO y TotalDZRecibidas deben ir como números (Val)
-                ' Estilo, Dispo, Color y Talla se quedan como texto (.Text)
-
                 cmd.Parameters.AddWithValue("@Num", Val(txtnum.Text))
                 cmd.Parameters.AddWithValue("@Estilo", txtestilo.Text)
                 cmd.Parameters.AddWithValue("@Dispo", txtdispo.Text)
@@ -65,14 +61,14 @@ Public Class AgregarLote
                 cmd.Parameters.AddWithValue("@Talla", txttalla.Text)
                 cmd.Parameters.AddWithValue("@TotalDZRecibidas", Val(txttotaldzrecibidas.Text))
 
-                ' Ejecutamos la instrucción
+
+                cmd.Parameters.AddWithValue("@Estatus", 0)
+
                 cmd.ExecuteNonQuery()
 
-                MessageBox.Show("Lote Agregado Correctamente a la base de datos FLEECE")
+                MessageBox.Show("Lote Agregado correctamente.")
 
-                ' Limpia los campos o actualiza el grid
                 llenarDatagrid()
-                ' Limpiar los campos después de guardar
                 LimpiarTextos()
             End Using
         Catch ex As Exception

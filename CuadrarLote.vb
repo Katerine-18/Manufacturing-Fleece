@@ -24,8 +24,8 @@ Public Class CuadrarLote
 
             ' Configuramos el ComboBox
             cmbstatus.DataSource = dt
-            cmbstatus.DisplayMember = "NombreEstatus" ' Lo que el usuario lee
-            cmbstatus.ValueMember = "Codigo"           ' El número que se guarda (1, 2, etc.)
+            cmbstatus.DisplayMember = "NombreEstatus"
+            cmbstatus.ValueMember = "Codigo"
 
             ' El toque final: que inicie vacío
             cmbstatus.SelectedIndex = -1
@@ -63,7 +63,7 @@ Public Class CuadrarLote
                 cmd.Parameters.AddWithValue("@Scrapt", txtscrapt.Text)
                 cmd.Parameters.AddWithValue("@TotalCuadraje", txttotalcuadraje.Text)
                 'Estatus 3 = Cuadraje
-                cmd.Parameters.AddWithValue("@Estatus", 3)
+                cmd.Parameters.AddWithValue("@Estatus", 0)
 
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Cuadraje guardado y estatus actualizado correctamente.")

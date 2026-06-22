@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.FLEECE.MENU_FLEECE
+            Me.MainForm = Global.FLEECE.FrmLogin
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

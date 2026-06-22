@@ -35,4 +35,8 @@
 
         End If
     End Sub
+
+    Private Sub btnsettings_Click(sender As Object, e As EventArgs) Handles btnsettings.Click
+
+    End Sub
 End Class
