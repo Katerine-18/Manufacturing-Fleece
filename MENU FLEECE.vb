@@ -1,4 +1,5 @@
-﻿Public Class MENU_FLEECE
+﻿Imports System.IO
+Public Class MENU_FLEECE
     Private Sub AgregarLoteToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         AgregarLote.ShowDialog()
@@ -37,6 +38,24 @@
     End Sub
 
     Private Sub btnsettings_Click(sender As Object, e As EventArgs) Handles btnsettings.Click
+        ' 1. Obtener la ruta de la carpeta donde se está ejecutando el programa
+        Dim rutaEjecutable As String = AppDomain.CurrentDomain.BaseDirectory
 
+        ' 2. Combinar la ruta con la ubicación de tu archivo PDF
+        Dim rutaPDF As String = Path.Combine(rutaEjecutable, "Manual", "Manual_Usuario_Fleece.pdf")
+
+        Try
+            ' 3. Verificar si el archivo realmente existe antes de abrirlo
+            If File.Exists(rutaPDF) Then
+                ' Abre el PDF con el programa predeterminado de la computadora
+                Process.Start(New ProcessStartInfo(rutaPDF) With {.UseShellExecute = True})
+            Else
+                MessageBox.Show("El archivo del manual no se encuentra en la ruta: " & rutaPDF,
+                                "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("No se pudo abrir el manual: " & ex.Message,
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
