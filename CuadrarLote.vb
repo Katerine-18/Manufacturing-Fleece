@@ -48,7 +48,7 @@ Public Class CuadrarLote
             Exit Sub
         End If
 
-        ' Si todo está bien, guardamos usando el Stored Procedure que creamos antes
+
         Try
             Using con As New SqlConnection(My.Settings.FLEECE)
                 con.Open()
@@ -62,12 +62,11 @@ Public Class CuadrarLote
                 cmd.Parameters.AddWithValue("@Terceras", txtterceras.Text)
                 cmd.Parameters.AddWithValue("@Scrapt", txtscrapt.Text)
                 cmd.Parameters.AddWithValue("@TotalCuadraje", txttotalcuadraje.Text)
-                'Estatus 3 = Cuadraje
                 cmd.Parameters.AddWithValue("@Estatus", 0)
 
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Cuadraje guardado y estatus actualizado correctamente.")
-                Me.Close()
+                LimpiarTextos()
             End Using
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
