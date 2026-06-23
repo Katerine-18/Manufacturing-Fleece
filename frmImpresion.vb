@@ -15,9 +15,7 @@ Public Class frmImpresion
                 Return
             End If
 
-            ' --- VINCULAR EL ARCHIVO .RDLC ---
-            ' IMPORTANTE: "FLEECE" es tu proyecto. Asegúrate que "Informe1.rdlc" sea el nombre REAL de tu archivo.
-            ' Si tu archivo se llama dsLotes.rdlc, cambia "Informe1.rdlc" por "dsLotes.rdlc"
+
             Me.ReporteImpresion.LocalReport.ReportEmbeddedResource = "FLEECE.PackingList.rdlc"
 
             ' --- LIMPIAR Y CARGAR ---
